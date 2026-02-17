@@ -1,0 +1,12 @@
+class IntValueObject extends ValueObject<number> {
+  constructor(value: number) {
+    super(value);
+    this.ensureValueIsInt(value);
+  }
+
+  private ensureValueIsInt(value: number): void {
+    if (!Number.isInteger(value)) {
+      throw new Error("El valor debe ser un número entero");
+    }
+  }
+}
