@@ -1,3 +1,5 @@
+import {ValueObject} from "./value-object"
+
 class StringValueObject extends ValueObject<string> {
   constructor(value: string) {
     super(value);

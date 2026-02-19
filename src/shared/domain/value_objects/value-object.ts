@@ -1,4 +1,4 @@
-abstract class ValueObject<T> {
+export abstract class ValueObject<T> {
   protected readonly _value: T;
 
   constructor(value: T) {
