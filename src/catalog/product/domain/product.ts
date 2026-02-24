@@ -5,7 +5,7 @@ import { Presentation } from "./entities/presentation";
 import { PresentationList } from "./entities/presentation/presentation-list";
 import PresentationInterface from "./entities/presentation/presentation-interface";
 
-export default class Product {
+export class Product {
   private ProductId: ProductId;
   private ProductName: ProductName;
   private ProductBaseUnit: ProductBaseUnit;
