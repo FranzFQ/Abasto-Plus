@@ -1,6 +1,6 @@
-import {ValueObject} from "./value-object"
+import { ValueObject } from "./value-object";
 
-class StringValueObject extends ValueObject<string> {
+export class StringValueObject extends ValueObject<string> {
   constructor(value: string) {
     super(value);
     this.ensureValueIsString(value);

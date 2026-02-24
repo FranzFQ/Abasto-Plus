@@ -1,6 +1,6 @@
 import {ValueObject} from "./value-object"
 
-class IntValueObject extends ValueObject<number> {
+export class IntValueObject extends ValueObject<number> {
   constructor(value: number) {
     super(value);
     this.ensureValueIsInt(value);

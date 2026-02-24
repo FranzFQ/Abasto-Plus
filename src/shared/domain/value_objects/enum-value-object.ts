@@ -1,9 +1,11 @@
-class EnumValueObject extends ValueObject<string> {
-  constructor(
-    value: string,
-    private readonly validValues: string[],
-  ) {
+import { ValueObject } from "./value-object";
+
+export class EnumValueObject extends ValueObject<string> {
+  private validValues: string[];
+
+  constructor(value: string, validValues: string[]) {
     super(value);
+    this.validValues = validValues;
     this.ensureValueIsValid(value);
   }
 

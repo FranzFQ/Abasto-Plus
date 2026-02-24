@@ -1,6 +1,6 @@
 import {ValueObject} from "./value-object"
 
-class IdentifierValueObject extends ValueObject<string> {
+export class IdentifierValueObject extends ValueObject<string> {
   constructor(value: string) {
     super(value);
     this.ensureValueIsUuid(value);
