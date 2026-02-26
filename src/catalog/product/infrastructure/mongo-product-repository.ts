@@ -9,7 +9,9 @@ export class MongoProductRepository implements ProductRepository {
       throw new Error("MongoDB URI is not defined in environment variables");
     }
     const client = new MongoClient(uri);
+    await this.Insert(client, data)
 
+    return Promise.resolve();
   }
 
   private async Insert(client: MongoClient, data: Product): Promise<void> {
@@ -17,7 +19,18 @@ export class MongoProductRepository implements ProductRepository {
     const db = await this.connect(client);
 
     const coleccion = db.collection("Products");
-    await coleccion.insertOne(data);
+    await coleccion.insertOne({
+      ProductId: data["ProductId"],
+      ProductName: data["ProductName"],
+      ProductBaseUnit: data["ProductBaseUnit"],
+      ProductPresentation: {
+        Id: data["ProductPresentation"].Presentations[0],
+        Name: data["ProductPresentation"].Presentations[1],
+        Quantity: data["ProductPresentation"].Presentations[2],
+        Type: data["ProductPresentation"].Presentations[3],
+        MeasureUnit: data["ProductPresentation"].Presentations[4],
+      },
+    });
 
     const usuarios = await coleccion.find({}).toArray();
     console.log(usuarios);
