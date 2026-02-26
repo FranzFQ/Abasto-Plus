@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/FranzFQ/Abasto-Plus#readme",
   "devDependencies": {
-    "@types/node": "^25.3.0",
+    "@types/node": "^25.3.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
