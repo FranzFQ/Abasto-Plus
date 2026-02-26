@@ -6,11 +6,11 @@ export class ProductName {
   }
 
   static VerifyName(value: string) {
-    if (value.length <= 10) {
+    if (value.length >= 10) {
       return new ProductName(value);
     } else {
       throw new Error(
-        "El nombre del producto no puede tener más de 10 caracteres",
+        "El nombre del producto no puede tener menos de 10 caracteres",
       );
     }
   }

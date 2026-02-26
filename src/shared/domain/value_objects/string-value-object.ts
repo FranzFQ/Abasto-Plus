@@ -7,8 +7,8 @@ export class StringValueObject extends ValueObject<string> {
   }
 
   private ensureValueIsString(value: string): void {
-    if (!Number.isInteger(value)) {
-      throw new Error("El valor debe ser un número entero");
+    if (typeof value !== "string") {
+      throw new Error("El valor debe ser un string");
     }
   }
 }

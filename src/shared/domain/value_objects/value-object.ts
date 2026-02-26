@@ -1,5 +1,5 @@
 export abstract class ValueObject<T> {
-  protected readonly _value: T;
+  public readonly _value: T;
 
   constructor(value: T) {
     this._value = value;
